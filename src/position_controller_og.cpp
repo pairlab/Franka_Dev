@@ -1,6 +1,5 @@
 // Copyright (c) 2017 Franka Emika GmbH
 // Use of this source code is governed by the Apache-2.0 license, see LICENSE
-#include "position_controller.h"
 #include "position_controller_og.h"
 
 #include <algorithm>
@@ -11,29 +10,29 @@
 #include <franka/robot.h>
 
 
-// void setDefaultBehavior(franka::Robot& robot) {
-//     robot.setCollisionBehavior(
-//         {{20.0, 20.0, 20.0, 20.0, 20.0, 20.0, 20.0}}, {{20.0, 20.0, 20.0, 20.0, 20.0, 20.0, 20.0}},
-//         {{10.0, 10.0, 10.0, 10.0, 10.0, 10.0, 10.0}}, {{10.0, 10.0, 10.0, 10.0, 10.0, 10.0, 10.0}},
-//         {{20.0, 20.0, 20.0, 20.0, 20.0, 20.0}}, {{20.0, 20.0, 20.0, 20.0, 20.0, 20.0}},
-//         {{10.0, 10.0, 10.0, 10.0, 10.0, 10.0}}, {{10.0, 10.0, 10.0, 10.0, 10.0, 10.0}});
-//     robot.setJointImpedance({{3000, 3000, 3000, 2500, 2500, 2000, 2000}});
-//     robot.setCartesianImpedance({{3000, 3000, 3000, 300, 300, 300}});
-// }
+void setDefaultBehavior(franka::Robot& robot) {
+    robot.setCollisionBehavior(
+        {{20.0, 20.0, 20.0, 20.0, 20.0, 20.0, 20.0}}, {{20.0, 20.0, 20.0, 20.0, 20.0, 20.0, 20.0}},
+        {{10.0, 10.0, 10.0, 10.0, 10.0, 10.0, 10.0}}, {{10.0, 10.0, 10.0, 10.0, 10.0, 10.0, 10.0}},
+        {{20.0, 20.0, 20.0, 20.0, 20.0, 20.0}}, {{20.0, 20.0, 20.0, 20.0, 20.0, 20.0}},
+        {{10.0, 10.0, 10.0, 10.0, 10.0, 10.0}}, {{10.0, 10.0, 10.0, 10.0, 10.0, 10.0}});
+    robot.setJointImpedance({{3000, 3000, 3000, 2500, 2500, 2000, 2000}});
+    robot.setCartesianImpedance({{3000, 3000, 3000, 300, 300, 300}});
+}
 
-// bool isConfValid(const std::array<double, 7> q) {
-//     std::array<double, DOF> q_max = {{2.8973, 1.7628, 2.8973, -0.0698, 2.8973, 3.7525, 2.8973}};
-// 	std::array<double, DOF> q_min = {{-2.8973, -1.7628, -2.8973, -3.0718, -2.8973, -0.0175, -2.8973}};
-// 	for (int i = 0; i < DOF; i++){
-// 		if ((q[i] > q_max[i]) || (q[i] < q_min[i])){
-// 			return false;
-// 		}
-// 	}
-// 	return true;
-// }
+bool isConfValid(const std::array<double, 7> q) {
+    std::array<double, DOF> q_max = {{2.8973, 1.7628, 2.8973, -0.0698, 2.8973, 3.7525, 2.8973}};
+	std::array<double, DOF> q_min = {{-2.8973, -1.7628, -2.8973, -3.0718, -2.8973, -0.0175, -2.8973}};
+	for (int i = 0; i < DOF; i++){
+		if ((q[i] > q_max[i]) || (q[i] < q_min[i])){
+			return false;
+		}
+	}
+	return true;
+}
 
-MotionGenerator::MotionGenerator(double speed_factor, const std::array<double, 7> q_goal)
-    : q_goal_(q_goal.data()), joint_listener_("INSERT WORKSTATION PORT HERE") {
+MotionGeneratorOg::MotionGeneratorOg(double speed_factor, const std::array<double, 7> q_goal)
+    : q_goal_(q_goal.data()) {
     dq_max_ *= speed_factor;
     ddq_max_start_ *= speed_factor;
     ddq_max_goal_ *= speed_factor;
@@ -47,7 +46,7 @@ MotionGenerator::MotionGenerator(double speed_factor, const std::array<double, 7
 
 }
 
-bool MotionGenerator::calculateDesiredValues(double t, Vector7d* delta_q_d) const {
+bool MotionGeneratorOg::calculateDesiredValues(double t, Vector7d* delta_q_d) const {
     Vector7i sign_delta_q;
     sign_delta_q << delta_q_.cwiseSign().cast<int>();
     Vector7d t_d = t_2_sync_ - t_1_sync_;
@@ -82,7 +81,7 @@ bool MotionGenerator::calculateDesiredValues(double t, Vector7d* delta_q_d) cons
                         [](bool x) { return x; });
 }
 
-void MotionGenerator::calculateSynchronizedValues() {
+void MotionGeneratorOg::calculateSynchronizedValues() {
     Vector7d dq_max_reach(dq_max_);
     Vector7d t_f = Vector7d::Zero();
     Vector7d delta_t_2 = Vector7d::Zero();
@@ -125,7 +124,7 @@ void MotionGenerator::calculateSynchronizedValues() {
     }
 }
 
-franka::JointPositions MotionGenerator::operator()(const franka::RobotState& robot_state,
+franka::JointPositions MotionGeneratorOg::operator()(const franka::RobotState& robot_state,
                                                    franka::Duration period) {
     time_ += period.toSec();
 
@@ -136,20 +135,11 @@ franka::JointPositions MotionGenerator::operator()(const franka::RobotState& rob
     }
 
     Vector7d delta_q_d;
-    bool motion_finished = calculateDesiredValues(time_, &delta_q_d) || haveAnglesChanged();
+    bool motion_finished = calculateDesiredValues(time_, &delta_q_d);
 
     std::array<double, 7> joint_positions;
     Eigen::VectorXd::Map(&joint_positions[0], 7) = (q_start_ + delta_q_d);
     franka::JointPositions output(joint_positions);
     output.motion_finished = motion_finished;
     return output;
-}
-
-bool MotionGenerator::haveAnglesChanged() {
-    joint_listener_.readMessage();
-    for(size_t i  = 0; i  < DOF; i++) {
-        if(std::abs(joint_listener_.jointAngles[i] - q_goal_.coeff(i, 0)) >= 1e-4)
-            return true;
-    }
-    return false;
 }

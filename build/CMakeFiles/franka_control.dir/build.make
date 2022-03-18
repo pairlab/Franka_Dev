@@ -57,9 +57,22 @@ include CMakeFiles/franka_control.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/franka_control.dir/flags.make
 
+CMakeFiles/franka_control.dir/src/joint_listener.cpp.o: CMakeFiles/franka_control.dir/flags.make
+CMakeFiles/franka_control.dir/src/joint_listener.cpp.o: ../src/joint_listener.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pairlab/franka_zmq/Franka_Dev/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/franka_control.dir/src/joint_listener.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/franka_control.dir/src/joint_listener.cpp.o -c /home/pairlab/franka_zmq/Franka_Dev/src/joint_listener.cpp
+
+CMakeFiles/franka_control.dir/src/joint_listener.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/franka_control.dir/src/joint_listener.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/pairlab/franka_zmq/Franka_Dev/src/joint_listener.cpp > CMakeFiles/franka_control.dir/src/joint_listener.cpp.i
+
+CMakeFiles/franka_control.dir/src/joint_listener.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/franka_control.dir/src/joint_listener.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/pairlab/franka_zmq/Franka_Dev/src/joint_listener.cpp -o CMakeFiles/franka_control.dir/src/joint_listener.cpp.s
+
 CMakeFiles/franka_control.dir/src/position_controller.cpp.o: CMakeFiles/franka_control.dir/flags.make
 CMakeFiles/franka_control.dir/src/position_controller.cpp.o: ../src/position_controller.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pairlab/franka_zmq/Franka_Dev/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/franka_control.dir/src/position_controller.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pairlab/franka_zmq/Franka_Dev/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/franka_control.dir/src/position_controller.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/franka_control.dir/src/position_controller.cpp.o -c /home/pairlab/franka_zmq/Franka_Dev/src/position_controller.cpp
 
 CMakeFiles/franka_control.dir/src/position_controller.cpp.i: cmake_force
@@ -70,20 +83,52 @@ CMakeFiles/franka_control.dir/src/position_controller.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/franka_control.dir/src/position_controller.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/pairlab/franka_zmq/Franka_Dev/src/position_controller.cpp -o CMakeFiles/franka_control.dir/src/position_controller.cpp.s
 
+CMakeFiles/franka_control.dir/src/position_controller_og.cpp.o: CMakeFiles/franka_control.dir/flags.make
+CMakeFiles/franka_control.dir/src/position_controller_og.cpp.o: ../src/position_controller_og.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pairlab/franka_zmq/Franka_Dev/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/franka_control.dir/src/position_controller_og.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/franka_control.dir/src/position_controller_og.cpp.o -c /home/pairlab/franka_zmq/Franka_Dev/src/position_controller_og.cpp
+
+CMakeFiles/franka_control.dir/src/position_controller_og.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/franka_control.dir/src/position_controller_og.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/pairlab/franka_zmq/Franka_Dev/src/position_controller_og.cpp > CMakeFiles/franka_control.dir/src/position_controller_og.cpp.i
+
+CMakeFiles/franka_control.dir/src/position_controller_og.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/franka_control.dir/src/position_controller_og.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/pairlab/franka_zmq/Franka_Dev/src/position_controller_og.cpp -o CMakeFiles/franka_control.dir/src/position_controller_og.cpp.s
+
+CMakeFiles/franka_control.dir/src/test_franka_position.cpp.o: CMakeFiles/franka_control.dir/flags.make
+CMakeFiles/franka_control.dir/src/test_franka_position.cpp.o: ../src/test_franka_position.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pairlab/franka_zmq/Franka_Dev/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/franka_control.dir/src/test_franka_position.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/franka_control.dir/src/test_franka_position.cpp.o -c /home/pairlab/franka_zmq/Franka_Dev/src/test_franka_position.cpp
+
+CMakeFiles/franka_control.dir/src/test_franka_position.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/franka_control.dir/src/test_franka_position.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/pairlab/franka_zmq/Franka_Dev/src/test_franka_position.cpp > CMakeFiles/franka_control.dir/src/test_franka_position.cpp.i
+
+CMakeFiles/franka_control.dir/src/test_franka_position.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/franka_control.dir/src/test_franka_position.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/pairlab/franka_zmq/Franka_Dev/src/test_franka_position.cpp -o CMakeFiles/franka_control.dir/src/test_franka_position.cpp.s
+
 # Object files for target franka_control
 franka_control_OBJECTS = \
-"CMakeFiles/franka_control.dir/src/position_controller.cpp.o"
+"CMakeFiles/franka_control.dir/src/joint_listener.cpp.o" \
+"CMakeFiles/franka_control.dir/src/position_controller.cpp.o" \
+"CMakeFiles/franka_control.dir/src/position_controller_og.cpp.o" \
+"CMakeFiles/franka_control.dir/src/test_franka_position.cpp.o"
 
 # External object files for target franka_control
 franka_control_EXTERNAL_OBJECTS =
 
+franka_control: CMakeFiles/franka_control.dir/src/joint_listener.cpp.o
 franka_control: CMakeFiles/franka_control.dir/src/position_controller.cpp.o
+franka_control: CMakeFiles/franka_control.dir/src/position_controller_og.cpp.o
+franka_control: CMakeFiles/franka_control.dir/src/test_franka_position.cpp.o
 franka_control: CMakeFiles/franka_control.dir/build.make
 franka_control: /opt/ros/noetic/lib/libfranka.so.0.8.0
 franka_control: /usr/local/lib/libzmq.so.5.2.5
 franka_control: /usr/lib/x86_64-linux-gnu/libsodium.so
 franka_control: CMakeFiles/franka_control.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/pairlab/franka_zmq/Franka_Dev/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable franka_control"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/pairlab/franka_zmq/Franka_Dev/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable franka_control"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/franka_control.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

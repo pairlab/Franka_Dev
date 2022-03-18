@@ -12,9 +12,9 @@
 #include <franka/robot.h>
 #include <franka/robot_state.h>
 
-#include "joint_listener.h"
-
+#ifndef DOF
 #define DOF 7 
+#endif
 
 /**
  * @file examples_common.h
@@ -36,7 +36,7 @@ bool isConfValid(const std::array<double, 7> q);
  * Wisama Khalil and Etienne Dombre. 2002. Modeling, Identification and Control of Robots
  * (Kogan Page Science Paper edition).
  */
-class MotionGenerator {
+class MotionGeneratorOg {
     public:
     /**
     * Creates a new MotionGenerator instance for a target q.
@@ -44,7 +44,7 @@ class MotionGenerator {
     * @param[in] speed_factor General speed factor in range [0, 1].
     * @param[in] q_goal Target joint positions.
     */
-    MotionGenerator(double speed_factor, const std::array<double, 7> q_goal);
+    MotionGeneratorOg(double speed_factor, const std::array<double, 7> q_goal);
 
     /**
     * Sends joint position calculations
@@ -62,7 +62,6 @@ class MotionGenerator {
 
     bool calculateDesiredValues(double t, Vector7d* delta_q_d) const;
     void calculateSynchronizedValues();
-    bool haveAnglesChanged();
 
     static constexpr double kDeltaQMotionFinished = 1e-6;
     const Vector7d q_goal_;
@@ -78,10 +77,6 @@ class MotionGenerator {
 
     double time_ = 0.0;
     
-    // zmq context and socket to listen on for any updates on joint angles 
-    JointListener joint_listener_;
-
-
     Vector7d dq_max_ = (Vector7d() << 2.0, 2.0, 2.0, 2.0, 2.5, 2.5, 2.5).finished();
     Vector7d ddq_max_start_ = (Vector7d() << 5, 5, 5, 5, 5, 5, 5).finished();
     Vector7d ddq_max_goal_ = (Vector7d() << 5, 5, 5, 5, 5, 5, 5).finished();

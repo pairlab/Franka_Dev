@@ -6,6 +6,12 @@
 
 #IncludeRegexTransform: 
 
+../include/joint_listener.h
+zmq.hpp
+-
+vector
+-
+
 ../include/position_controller.h
 array
 -
@@ -21,12 +27,30 @@ franka/robot.h
 -
 franka/robot_state.h
 -
-zmq.hpp
+joint_listener.h
+../include/joint_listener.h
+
+../include/position_controller_og.h
+array
+-
+string
+-
+eigen3/Eigen/Core
+-
+franka/control_types.h
+-
+franka/duration.h
+-
+franka/robot.h
+-
+franka/robot_state.h
 -
 
 /home/pairlab/franka_zmq/Franka_Dev/src/position_controller.cpp
 position_controller.h
 /home/pairlab/franka_zmq/Franka_Dev/src/position_controller.h
+position_controller_og.h
+/home/pairlab/franka_zmq/Franka_Dev/src/position_controller_og.h
 algorithm
 -
 array

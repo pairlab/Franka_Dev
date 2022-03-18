@@ -20,3 +20,5 @@ add_executable(franka_control ${FRANKA_CONTROL_SRC})
 
 
 target_link_libraries(franka_control PUBLIC Franka::Franka libzmq ${Franka} ${cppzmq} )
+
+

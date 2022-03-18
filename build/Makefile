@@ -123,6 +123,33 @@ franka_control/fast:
 	$(MAKE) -f CMakeFiles/franka_control.dir/build.make CMakeFiles/franka_control.dir/build
 .PHONY : franka_control/fast
 
+src/joint_listener.o: src/joint_listener.cpp.o
+
+.PHONY : src/joint_listener.o
+
+# target to build an object file
+src/joint_listener.cpp.o:
+	$(MAKE) -f CMakeFiles/franka_control.dir/build.make CMakeFiles/franka_control.dir/src/joint_listener.cpp.o
+.PHONY : src/joint_listener.cpp.o
+
+src/joint_listener.i: src/joint_listener.cpp.i
+
+.PHONY : src/joint_listener.i
+
+# target to preprocess a source file
+src/joint_listener.cpp.i:
+	$(MAKE) -f CMakeFiles/franka_control.dir/build.make CMakeFiles/franka_control.dir/src/joint_listener.cpp.i
+.PHONY : src/joint_listener.cpp.i
+
+src/joint_listener.s: src/joint_listener.cpp.s
+
+.PHONY : src/joint_listener.s
+
+# target to generate assembly for a file
+src/joint_listener.cpp.s:
+	$(MAKE) -f CMakeFiles/franka_control.dir/build.make CMakeFiles/franka_control.dir/src/joint_listener.cpp.s
+.PHONY : src/joint_listener.cpp.s
+
 src/position_controller.o: src/position_controller.cpp.o
 
 .PHONY : src/position_controller.o
@@ -150,6 +177,60 @@ src/position_controller.cpp.s:
 	$(MAKE) -f CMakeFiles/franka_control.dir/build.make CMakeFiles/franka_control.dir/src/position_controller.cpp.s
 .PHONY : src/position_controller.cpp.s
 
+src/position_controller_og.o: src/position_controller_og.cpp.o
+
+.PHONY : src/position_controller_og.o
+
+# target to build an object file
+src/position_controller_og.cpp.o:
+	$(MAKE) -f CMakeFiles/franka_control.dir/build.make CMakeFiles/franka_control.dir/src/position_controller_og.cpp.o
+.PHONY : src/position_controller_og.cpp.o
+
+src/position_controller_og.i: src/position_controller_og.cpp.i
+
+.PHONY : src/position_controller_og.i
+
+# target to preprocess a source file
+src/position_controller_og.cpp.i:
+	$(MAKE) -f CMakeFiles/franka_control.dir/build.make CMakeFiles/franka_control.dir/src/position_controller_og.cpp.i
+.PHONY : src/position_controller_og.cpp.i
+
+src/position_controller_og.s: src/position_controller_og.cpp.s
+
+.PHONY : src/position_controller_og.s
+
+# target to generate assembly for a file
+src/position_controller_og.cpp.s:
+	$(MAKE) -f CMakeFiles/franka_control.dir/build.make CMakeFiles/franka_control.dir/src/position_controller_og.cpp.s
+.PHONY : src/position_controller_og.cpp.s
+
+src/test_franka_position.o: src/test_franka_position.cpp.o
+
+.PHONY : src/test_franka_position.o
+
+# target to build an object file
+src/test_franka_position.cpp.o:
+	$(MAKE) -f CMakeFiles/franka_control.dir/build.make CMakeFiles/franka_control.dir/src/test_franka_position.cpp.o
+.PHONY : src/test_franka_position.cpp.o
+
+src/test_franka_position.i: src/test_franka_position.cpp.i
+
+.PHONY : src/test_franka_position.i
+
+# target to preprocess a source file
+src/test_franka_position.cpp.i:
+	$(MAKE) -f CMakeFiles/franka_control.dir/build.make CMakeFiles/franka_control.dir/src/test_franka_position.cpp.i
+.PHONY : src/test_franka_position.cpp.i
+
+src/test_franka_position.s: src/test_franka_position.cpp.s
+
+.PHONY : src/test_franka_position.s
+
+# target to generate assembly for a file
+src/test_franka_position.cpp.s:
+	$(MAKE) -f CMakeFiles/franka_control.dir/build.make CMakeFiles/franka_control.dir/src/test_franka_position.cpp.s
+.PHONY : src/test_franka_position.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -159,9 +240,18 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... franka_control"
+	@echo "... src/joint_listener.o"
+	@echo "... src/joint_listener.i"
+	@echo "... src/joint_listener.s"
 	@echo "... src/position_controller.o"
 	@echo "... src/position_controller.i"
 	@echo "... src/position_controller.s"
+	@echo "... src/position_controller_og.o"
+	@echo "... src/position_controller_og.i"
+	@echo "... src/position_controller_og.s"
+	@echo "... src/test_franka_position.o"
+	@echo "... src/test_franka_position.i"
+	@echo "... src/test_franka_position.s"
 .PHONY : help
 
 

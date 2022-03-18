@@ -5,7 +5,7 @@
 #include <array>
 #include <string>
 
-#include <Eigen/Core>
+#include <eigen3/Eigen/Core>
 
 #include <franka/control_types.h>
 #include <franka/duration.h>
@@ -13,6 +13,8 @@
 #include <franka/robot_state.h>
 
 #include <zmq.hpp>
+
+#define DOF 7 
 
 /**
  * @file examples_common.h

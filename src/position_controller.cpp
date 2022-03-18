@@ -31,7 +31,7 @@ bool isConfValid(const std::array<double, 7> q) {
 	return true;
 }
 
-MotionGenerator::MotionGenerator(double speed_factor, const std::array<double, 7> q_goal)
+MotionGenerator::MotionGenerator(double speed_factor, const std::array<double, 7> q_goal, const std::string socket)
     : q_goal_(q_goal.data()) {
     dq_max_ *= speed_factor;
     ddq_max_start_ *= speed_factor;
@@ -44,10 +44,10 @@ MotionGenerator::MotionGenerator(double speed_factor, const std::array<double, 7
     t_f_sync_.setZero();
     q_1_.setZero();
 
-    zmq::context_t ctx;
-    zmq::socket_t socket(ctx, zmq::socket_type::sub);
-    ctx_ = ctx;
-    socket_ = socket;
+    //zmq::context_t ctx;
+    //zmq::socket_t socket(ctx, zmq::socket_type::sub);
+    //ctx_ = ctx;
+    socket_ = zmq::socket_t(ctx_, zmq::socket_type::sub) ;
     //TODO: INSERT ADDRESS
     socket_.connect("tcp://INSERT ADDRESS");
     socket_.setsockopt(ZMQ_SUBSCRIBE, "", 0);
@@ -149,4 +149,10 @@ franka::JointPositions MotionGenerator::operator()(const franka::RobotState& rob
     franka::JointPositions output(joint_positions);
     output.motion_finished = motion_finished;
     return output;
+}
+
+
+int main (int argc, char *argv[]) 
+{
+    return 0;
 }

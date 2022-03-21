@@ -30,8 +30,7 @@ CMakeFiles/franka_control.dir/src/position_controller_og.cpp.o: /opt/ros/noetic/
 CMakeFiles/franka_control.dir/src/position_controller_og.cpp.o: /opt/ros/noetic/include/libfranka/franka/robot.h
 CMakeFiles/franka_control.dir/src/position_controller_og.cpp.o: /opt/ros/noetic/include/libfranka/franka/robot_state.h
 
-CMakeFiles/franka_control.dir/src/test_franka_position.cpp.o: ../include/joint_listener.h
-CMakeFiles/franka_control.dir/src/test_franka_position.cpp.o: ../include/position_controller.h
+CMakeFiles/franka_control.dir/src/test_franka_position.cpp.o: ../include/position_controller_og.h
 CMakeFiles/franka_control.dir/src/test_franka_position.cpp.o: ../src/test_franka_position.cpp
 CMakeFiles/franka_control.dir/src/test_franka_position.cpp.o: /opt/ros/noetic/include/libfranka/franka/command_types.h
 CMakeFiles/franka_control.dir/src/test_franka_position.cpp.o: /opt/ros/noetic/include/libfranka/franka/control_types.h
@@ -42,4 +41,17 @@ CMakeFiles/franka_control.dir/src/test_franka_position.cpp.o: /opt/ros/noetic/in
 CMakeFiles/franka_control.dir/src/test_franka_position.cpp.o: /opt/ros/noetic/include/libfranka/franka/lowpass_filter.h
 CMakeFiles/franka_control.dir/src/test_franka_position.cpp.o: /opt/ros/noetic/include/libfranka/franka/robot.h
 CMakeFiles/franka_control.dir/src/test_franka_position.cpp.o: /opt/ros/noetic/include/libfranka/franka/robot_state.h
+
+CMakeFiles/franka_control.dir/src/test_franka_position_zmq.cpp.o: ../include/joint_listener.h
+CMakeFiles/franka_control.dir/src/test_franka_position_zmq.cpp.o: ../include/position_controller.h
+CMakeFiles/franka_control.dir/src/test_franka_position_zmq.cpp.o: ../src/test_franka_position_zmq.cpp
+CMakeFiles/franka_control.dir/src/test_franka_position_zmq.cpp.o: /opt/ros/noetic/include/libfranka/franka/command_types.h
+CMakeFiles/franka_control.dir/src/test_franka_position_zmq.cpp.o: /opt/ros/noetic/include/libfranka/franka/control_types.h
+CMakeFiles/franka_control.dir/src/test_franka_position_zmq.cpp.o: /opt/ros/noetic/include/libfranka/franka/duration.h
+CMakeFiles/franka_control.dir/src/test_franka_position_zmq.cpp.o: /opt/ros/noetic/include/libfranka/franka/errors.h
+CMakeFiles/franka_control.dir/src/test_franka_position_zmq.cpp.o: /opt/ros/noetic/include/libfranka/franka/exception.h
+CMakeFiles/franka_control.dir/src/test_franka_position_zmq.cpp.o: /opt/ros/noetic/include/libfranka/franka/log.h
+CMakeFiles/franka_control.dir/src/test_franka_position_zmq.cpp.o: /opt/ros/noetic/include/libfranka/franka/lowpass_filter.h
+CMakeFiles/franka_control.dir/src/test_franka_position_zmq.cpp.o: /opt/ros/noetic/include/libfranka/franka/robot.h
+CMakeFiles/franka_control.dir/src/test_franka_position_zmq.cpp.o: /opt/ros/noetic/include/libfranka/franka/robot_state.h
 

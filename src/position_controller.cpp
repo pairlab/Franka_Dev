@@ -148,7 +148,7 @@ franka::JointPositions MotionGenerator::operator()(const franka::RobotState& rob
 bool MotionGenerator::haveAnglesChanged() {
     joint_listener_.readMessage();
     for(size_t i  = 0; i  < DOF; i++) {
-        if(std::abs(joint_listener_.jointAngles[i] - q_goal_.coeff(i, 0)) >= 1e-4)
+        if(std::abs(joint_listener_.jointAngles[i] - q_goal_.coeff(i, 0)) >= 1e-3)
             return true;
     }
     return false;

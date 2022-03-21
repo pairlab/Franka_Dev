@@ -231,6 +231,33 @@ src/test_franka_position.cpp.s:
 	$(MAKE) -f CMakeFiles/franka_control.dir/build.make CMakeFiles/franka_control.dir/src/test_franka_position.cpp.s
 .PHONY : src/test_franka_position.cpp.s
 
+src/test_franka_position_zmq.o: src/test_franka_position_zmq.cpp.o
+
+.PHONY : src/test_franka_position_zmq.o
+
+# target to build an object file
+src/test_franka_position_zmq.cpp.o:
+	$(MAKE) -f CMakeFiles/franka_control.dir/build.make CMakeFiles/franka_control.dir/src/test_franka_position_zmq.cpp.o
+.PHONY : src/test_franka_position_zmq.cpp.o
+
+src/test_franka_position_zmq.i: src/test_franka_position_zmq.cpp.i
+
+.PHONY : src/test_franka_position_zmq.i
+
+# target to preprocess a source file
+src/test_franka_position_zmq.cpp.i:
+	$(MAKE) -f CMakeFiles/franka_control.dir/build.make CMakeFiles/franka_control.dir/src/test_franka_position_zmq.cpp.i
+.PHONY : src/test_franka_position_zmq.cpp.i
+
+src/test_franka_position_zmq.s: src/test_franka_position_zmq.cpp.s
+
+.PHONY : src/test_franka_position_zmq.s
+
+# target to generate assembly for a file
+src/test_franka_position_zmq.cpp.s:
+	$(MAKE) -f CMakeFiles/franka_control.dir/build.make CMakeFiles/franka_control.dir/src/test_franka_position_zmq.cpp.s
+.PHONY : src/test_franka_position_zmq.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -252,6 +279,9 @@ help:
 	@echo "... src/test_franka_position.o"
 	@echo "... src/test_franka_position.i"
 	@echo "... src/test_franka_position.s"
+	@echo "... src/test_franka_position_zmq.o"
+	@echo "... src/test_franka_position_zmq.i"
+	@echo "... src/test_franka_position_zmq.s"
 .PHONY : help
 
 

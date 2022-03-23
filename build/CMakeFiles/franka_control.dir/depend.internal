@@ -9,6 +9,7 @@ CMakeFiles/franka_control.dir/src/joint_publisher.cpp.o
  /home/pairlab/franka_zmq/Franka_Dev/src/joint_publisher.cpp
 CMakeFiles/franka_control.dir/src/position_controller.cpp.o
  ../include/joint_listener.h
+ ../include/joint_publisher.h
  ../include/position_controller.h
  /home/pairlab/franka_zmq/Franka_Dev/src/position_controller.cpp
  /opt/ros/noetic/include/libfranka/franka/command_types.h
@@ -46,6 +47,7 @@ CMakeFiles/franka_control.dir/src/test_franka_position.cpp.o
  /opt/ros/noetic/include/libfranka/franka/robot_state.h
 CMakeFiles/franka_control.dir/src/test_franka_position_zmq.cpp.o
  ../include/joint_listener.h
+ ../include/joint_publisher.h
  ../include/position_controller.h
  /home/pairlab/franka_zmq/Franka_Dev/src/test_franka_position_zmq.cpp
  /opt/ros/noetic/include/libfranka/franka/command_types.h

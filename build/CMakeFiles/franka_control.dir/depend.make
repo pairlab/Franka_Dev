@@ -8,6 +8,7 @@ CMakeFiles/franka_control.dir/src/joint_publisher.cpp.o: ../include/joint_publis
 CMakeFiles/franka_control.dir/src/joint_publisher.cpp.o: ../src/joint_publisher.cpp
 
 CMakeFiles/franka_control.dir/src/position_controller.cpp.o: ../include/joint_listener.h
+CMakeFiles/franka_control.dir/src/position_controller.cpp.o: ../include/joint_publisher.h
 CMakeFiles/franka_control.dir/src/position_controller.cpp.o: ../include/position_controller.h
 CMakeFiles/franka_control.dir/src/position_controller.cpp.o: ../src/position_controller.cpp
 CMakeFiles/franka_control.dir/src/position_controller.cpp.o: /opt/ros/noetic/include/libfranka/franka/command_types.h
@@ -45,6 +46,7 @@ CMakeFiles/franka_control.dir/src/test_franka_position.cpp.o: /opt/ros/noetic/in
 CMakeFiles/franka_control.dir/src/test_franka_position.cpp.o: /opt/ros/noetic/include/libfranka/franka/robot_state.h
 
 CMakeFiles/franka_control.dir/src/test_franka_position_zmq.cpp.o: ../include/joint_listener.h
+CMakeFiles/franka_control.dir/src/test_franka_position_zmq.cpp.o: ../include/joint_publisher.h
 CMakeFiles/franka_control.dir/src/test_franka_position_zmq.cpp.o: ../include/position_controller.h
 CMakeFiles/franka_control.dir/src/test_franka_position_zmq.cpp.o: ../src/test_franka_position_zmq.cpp
 CMakeFiles/franka_control.dir/src/test_franka_position_zmq.cpp.o: /opt/ros/noetic/include/libfranka/franka/command_types.h

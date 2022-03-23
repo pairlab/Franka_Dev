@@ -1,7 +1,7 @@
 // Copyright (c) 2017 Franka Emika GmbH
 // Use of this source code is governed by the Apache-2.0 license, see LICENSE
 #include "position_controller.h"
-//#include "position_controller_og.h"
+#include "position_controller_og.h"
 
 #include <algorithm>
 #include <array>
@@ -12,6 +12,7 @@
 
 #include <franka/exception.h>
 #include <franka/robot.h>
+
 
 // void setDefaultBehavior(franka::Robot& robot) {
 //     robot.setCollisionBehavior(
@@ -35,7 +36,7 @@
 // }
 
 MotionGenerator::MotionGenerator(double speed_factor, const std::array<double, 7> q_goal)
-    : q_goal_(q_goal.data()) /*joint_listener_("tcp://192.168.1.2:2069")*/ {
+    : q_goal_(q_goal.data()), joint_listener_("tcp://192.168.1.2:2069") {
     dq_max_ *= speed_factor;
     ddq_max_start_ *= speed_factor;
     ddq_max_goal_ *= speed_factor;
@@ -137,24 +138,19 @@ franka::JointPositions MotionGenerator::operator()(const franka::RobotState& rob
         calculateSynchronizedValues();
     }
 
-    count+=1;
-    bool changed = false;
-    if(count % 20 == 0 )
-    {
-        changed = haveAnglesChanged();
-    }
     Vector7d delta_q_d;
+    bool changed = haveAnglesChanged();
     
     //std::cout << "have they changed!??!?!?! " << changed << std::endl;
-    bool motion_finished = calculateDesiredValues(time_, &delta_q_d) || changed;
+    bool motion_finished = calculateDesiredValues(time_, &delta_q_d); //|| haveAnglesChanged();
 
     std::array<double, 7> joint_positions;
     Eigen::VectorXd::Map(&joint_positions[0], 7) = (q_start_ + delta_q_d);
     franka::JointPositions output(joint_positions);
     output.motion_finished = motion_finished;
 
-    std::vector<double> jointBroadcast = {joint_positions[0], joint_positions[1], joint_positions[2], joint_positions[3], joint_positions[4], joint_positions[5], joint_positions[6]};
-    joint_publisher_.writeMessage(jointBroadcast);
+    //std::vector<double> jointBroadcast = {joint_positions[0], joint_positions[1], joint_positions[2], joint_positions[3], joint_positions[4], joint_positions[5], joint_positions[6]};
+    //joint_publisher_.writeMessage(jointBroadcast);
     return output;
 }
 
@@ -169,6 +165,3 @@ bool MotionGenerator::haveAnglesChanged() {
     }
     return false;
 }
-
-JointListener joint_listener_("tcp://192.168.1.2:2069");
-JointPublisher joint_publisher_("tcp://192.168.1.3:2096");

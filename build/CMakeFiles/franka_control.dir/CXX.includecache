@@ -12,6 +12,12 @@ zmq.hpp
 vector
 -
 
+../include/joint_publisher.h
+zmq.hpp
+-
+vector
+-
+
 ../include/position_controller.h
 array
 -
@@ -29,6 +35,10 @@ franka/robot_state.h
 -
 joint_listener.h
 ../include/joint_listener.h
+joint_publisher.h
+../include/joint_publisher.h
+memory
+-
 
 /home/pairlab/franka_zmq/Franka_Dev/src/position_controller.cpp
 position_controller.h
@@ -49,16 +59,6 @@ franka/exception.h
 -
 franka/robot.h
 -
-
-/home/pairlab/franka_zmq/Franka_Dev/src/test_franka_position_zmq.cpp
-franka/exception.h
--
-franka/robot.h
--
-iostream
--
-position_controller.h
-/home/pairlab/franka_zmq/Franka_Dev/src/position_controller.h
 
 /opt/ros/noetic/include/libfranka/franka/command_types.h
 array

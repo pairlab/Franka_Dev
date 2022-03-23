@@ -13,6 +13,9 @@
 #include <franka/robot_state.h>
 
 #include "joint_listener.h"
+#include "joint_publisher.h"
+
+#include <memory>
 
 #define DOF 7 
 
@@ -59,7 +62,7 @@ class MotionGenerator {
     private:
     using Vector7d = Eigen::Matrix<double, 7, 1, Eigen::ColMajor>;
     using Vector7i = Eigen::Matrix<int, 7, 1, Eigen::ColMajor>;
-
+    size_t count = 0;
     bool calculateDesiredValues(double t, Vector7d* delta_q_d) const;
     void calculateSynchronizedValues();
     bool haveAnglesChanged();
@@ -79,10 +82,18 @@ class MotionGenerator {
     double time_ = 0.0;
     
     // zmq context and socket to listen on for any updates on joint angles 
-    JointListener joint_listener_;
+    
+    // JointListener joint_listener_;
+    //
+    
+    //
+    
+    
 
 
     Vector7d dq_max_ = (Vector7d() << 2.0, 2.0, 2.0, 2.0, 2.5, 2.5, 2.5).finished();
     Vector7d ddq_max_start_ = (Vector7d() << 5, 5, 5, 5, 5, 5, 5).finished();
     Vector7d ddq_max_goal_ = (Vector7d() << 5, 5, 5, 5, 5, 5, 5).finished();
 };
+extern JointListener joint_listener_;
+extern JointPublisher joint_publisher_;

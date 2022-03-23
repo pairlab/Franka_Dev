@@ -150,6 +150,33 @@ src/joint_listener.cpp.s:
 	$(MAKE) -f CMakeFiles/franka_control.dir/build.make CMakeFiles/franka_control.dir/src/joint_listener.cpp.s
 .PHONY : src/joint_listener.cpp.s
 
+src/joint_publisher.o: src/joint_publisher.cpp.o
+
+.PHONY : src/joint_publisher.o
+
+# target to build an object file
+src/joint_publisher.cpp.o:
+	$(MAKE) -f CMakeFiles/franka_control.dir/build.make CMakeFiles/franka_control.dir/src/joint_publisher.cpp.o
+.PHONY : src/joint_publisher.cpp.o
+
+src/joint_publisher.i: src/joint_publisher.cpp.i
+
+.PHONY : src/joint_publisher.i
+
+# target to preprocess a source file
+src/joint_publisher.cpp.i:
+	$(MAKE) -f CMakeFiles/franka_control.dir/build.make CMakeFiles/franka_control.dir/src/joint_publisher.cpp.i
+.PHONY : src/joint_publisher.cpp.i
+
+src/joint_publisher.s: src/joint_publisher.cpp.s
+
+.PHONY : src/joint_publisher.s
+
+# target to generate assembly for a file
+src/joint_publisher.cpp.s:
+	$(MAKE) -f CMakeFiles/franka_control.dir/build.make CMakeFiles/franka_control.dir/src/joint_publisher.cpp.s
+.PHONY : src/joint_publisher.cpp.s
+
 src/position_controller.o: src/position_controller.cpp.o
 
 .PHONY : src/position_controller.o
@@ -270,6 +297,9 @@ help:
 	@echo "... src/joint_listener.o"
 	@echo "... src/joint_listener.i"
 	@echo "... src/joint_listener.s"
+	@echo "... src/joint_publisher.o"
+	@echo "... src/joint_publisher.i"
+	@echo "... src/joint_publisher.s"
 	@echo "... src/position_controller.o"
 	@echo "... src/position_controller.i"
 	@echo "... src/position_controller.s"

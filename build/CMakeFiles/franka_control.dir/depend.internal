@@ -4,10 +4,12 @@
 CMakeFiles/franka_control.dir/src/joint_listener.cpp.o
  ../include/joint_listener.h
  /home/pairlab/franka_zmq/Franka_Dev/src/joint_listener.cpp
+CMakeFiles/franka_control.dir/src/joint_publisher.cpp.o
+ ../include/joint_publisher.h
+ /home/pairlab/franka_zmq/Franka_Dev/src/joint_publisher.cpp
 CMakeFiles/franka_control.dir/src/position_controller.cpp.o
  ../include/joint_listener.h
  ../include/position_controller.h
- ../include/position_controller_og.h
  /home/pairlab/franka_zmq/Franka_Dev/src/position_controller.cpp
  /opt/ros/noetic/include/libfranka/franka/command_types.h
  /opt/ros/noetic/include/libfranka/franka/control_types.h

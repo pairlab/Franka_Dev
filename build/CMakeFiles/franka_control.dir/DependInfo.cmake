@@ -5,6 +5,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
   "/home/pairlab/franka_zmq/Franka_Dev/src/joint_listener.cpp" "/home/pairlab/franka_zmq/Franka_Dev/build/CMakeFiles/franka_control.dir/src/joint_listener.cpp.o"
+  "/home/pairlab/franka_zmq/Franka_Dev/src/joint_publisher.cpp" "/home/pairlab/franka_zmq/Franka_Dev/build/CMakeFiles/franka_control.dir/src/joint_publisher.cpp.o"
   "/home/pairlab/franka_zmq/Franka_Dev/src/position_controller.cpp" "/home/pairlab/franka_zmq/Franka_Dev/build/CMakeFiles/franka_control.dir/src/position_controller.cpp.o"
   "/home/pairlab/franka_zmq/Franka_Dev/src/position_controller_og.cpp" "/home/pairlab/franka_zmq/Franka_Dev/build/CMakeFiles/franka_control.dir/src/position_controller_og.cpp.o"
   "/home/pairlab/franka_zmq/Franka_Dev/src/test_franka_position.cpp" "/home/pairlab/franka_zmq/Franka_Dev/build/CMakeFiles/franka_control.dir/src/test_franka_position.cpp.o"
